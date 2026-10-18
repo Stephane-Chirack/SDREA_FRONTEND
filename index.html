@@ -6183,7 +6183,7 @@ class OfflineMapController {
             "line-width":["interpolate",["linear"],["zoom"],6,["match",["get","kind"],"highway",1.4,0.9],14,["match",["get","kind"],"highway",7,4.5]],
             "line-opacity":["case",["==",["get","is_tunnel"],true],0.35,1] } },
         { id:"roads", type:"line", source:"base", "source-layer":"roads",
-          filter:["!in",["get","kind"],["literal",["path","aerialway"]]],
+          filter:["match",["get","kind"],["path","aerialway"],false,true],
           paint:{ "line-color":["match",["get","kind"],
               "highway","#17d6e0", "major_road","#0a8f99", "minor_road","#0a6b73",
               "rail","#6b6b8f",
